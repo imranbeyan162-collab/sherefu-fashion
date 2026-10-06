@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="om">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Sherefu Fashion — Shashemene, Ethiopia</title>
+  <meta name="description" content="Discover the story behind Sherefu Fashion, founded by TikTok creator @sherefu28 (2M+ followers). Exclusive fashion imported from Dubai & America, and wholesale jeans manufacturing.">
+  <meta property="og:title" content="About Sherefu Fashion | Luxury Boutique & Founder Story">
+  <meta property="og:image" content="assets/images/logo-sherefu-fashion.png">
+  <link rel="icon" type="image/png" href="assets/images/logo-sherefu-fashion.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Sticky Luxury Header -->
+  <header class="header-sticky">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo-wrap">
+          <picture>
+            <source srcset="assets/images/webp/logo-sherefu-fashion.webp" type="image/webp">
+            <img src="assets/images/logo-sherefu-fashion.png" alt="Sherefu Fashion Logo" class="brand-logo-img" data-i18n-alt="logo">
+          </picture>
+          <span class="brand-name">SHEREFU <span>FASHION</span></span>
+        </a>
+
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" data-i18n="nav.home">Mana</a></li>
+          <li class="nav-item"><a href="about.html" class="active" data-i18n="nav.about">Waa'ee Keenya</a></li>
+          <li class="nav-item"><a href="stores.html" data-i18n="nav.stores">Suuqii Sherefu</a></li>
+          <li class="nav-item"><a href="wholesale.html" data-i18n="nav.wholesale">Jumlaa</a></li>
+          <li class="nav-item"><a href="contact.html" data-i18n="nav.contact">Nu Qunnamaa</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <a href="https://www.tiktok.com/@sherefu28" target="_blank" rel="noopener noreferrer" class="btn-tiktok-pill">
+            <svg class="tiktok-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.18 1.19 2.16 2.36 2.37.99.18 2.05-.09 2.77-.77.53-.5.85-1.18.89-1.89.04-2.82.02-5.64.02-8.46V.02z"/>
+            </svg>
+            <span data-i18n="header.tiktokText">@sherefu28</span>
+          </a>
+
+          <div class="lang-switcher-wrap">
+            <select id="langSelect" class="lang-select" aria-label="Select Language">
+              <option value="om">Afaan Oromoo</option>
+              <option value="en">English</option>
+              <option value="am">አማርኛ (Amharic)</option>
+            </select>
+          </div>
+
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo-wrap">
+        <img src="assets/images/logo-sherefu-fashion.png" alt="Sherefu Fashion" style="height: 38px;">
+        <span class="brand-name">SHEREFU <span>FASHION</span></span>
+      </div>
+      <button class="mobile-drawer-close" id="mobileDrawerClose">&times;</button>
+    </div>
+
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" data-i18n="nav.home">Mana</a></li>
+      <li><a href="about.html" class="active" data-i18n="nav.about">Waa'ee Keenya</a></li>
+      <li><a href="stores.html" data-i18n="nav.stores">Suuqii Sherefu</a></li>
+      <li><a href="wholesale.html" data-i18n="nav.wholesale">Jumlaa</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Nu Qunnamaa</a></li>
+    </ul>
+
+    <div style="margin-top: auto; padding-top: 2rem;">
+      <select id="mobileLangSelect" class="lang-select" style="width: 100%;">
+        <option value="om">Afaan Oromoo</option>
+        <option value="en">English</option>
+        <option value="am">አማርኛ (Amharic)</option>
+      </select>
+    </div>
+  </aside>
+
+  <!-- Page Header Banner -->
+  <section class="page-banner">
+    <div class="container reveal-pop">
+      <span class="badge-luxury" data-i18n="about.tag">Waa'ee Brandii Keenyaa</span>
+      <h1 class="serif-title" style="font-size: clamp(2.6rem, 5.5vw, 4.2rem); margin-bottom: 1rem;">
+        <span class="two-tone" data-i18n="about.title">Seenaa Sherefu Fashion</span>
+      </h1>
+      <p style="color: var(--text-muted); max-width: 680px; margin: 0 auto; font-size: 1.15rem;" data-i18n="curation.description">
+        Dubaay fi Ameerikaa irraa kallattiin kan fidan uffata ammayyaa, isniikaroota beekamoo, shittoo mi'aawaa fi sa'aatiiwwan gatii jabeeyyii.
+      </p>
+    </div>
+  </section>
+
+  <!-- Full About Us Content with Alternating Scroll Reveals -->
+  <section class="section">
+    <div class="container">
+      
+      <!-- Chapter 1: The Icon & The Car -->
+      <div class="story-row" style="margin-bottom: 5rem;">
+        <div class="story-visual-wrap reveal-left">
+          <picture>
+            <source srcset="assets/images/webp/owner-black-suit-car.webp" type="image/webp">
+            <img src="assets/images/owner-black-suit-car.png" alt="Sherefu Fashion Founder in Tailored Black Suit" data-i18n-alt="ownerBlackSuitCar">
+          </picture>
+        </div>
+        <div class="story-content reveal-right">
+          <span class="story-number">01</span>
+          <span class="badge-luxury" data-i18n="about.tag">Waa'ee Brandii Keenyaa</span>
+          <h2 class="story-heading">
+            <span class="white-text">A Cultural Movement </span><span class="red-text">in Shashemene</span>
+          </h2>
+          <p class="story-desc" data-i18n="about.p1">
+            Sherefu Fashion abbaa daldalaa fi uumaa qabiyyee TikTok beekamaa @sherefu28 (hordoftoota miliyoona 2 ol qabu) dhaan magaalaa Shashamanetti kan hundeeffamedha.
+          </p>
+          <div class="story-badge-strip">
+            <span class="story-badge-item">2 Million+ Followers</span>
+            <span class="story-badge-item">TikTok @sherefu28</span>
+            <span class="story-badge-item">Shashemene, Ethiopia</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chapter 2: Luxury Imports from Dubai & America -->
+      <div class="story-row reversed" style="margin-bottom: 5rem;">
+        <div class="story-visual-wrap reveal-right">
+          <picture>
+            <source srcset="assets/images/webp/owner-in-car.webp" type="image/webp">
+            <img src="assets/images/owner-in-car.png" alt="Founder in Luxury Car with Red Leather" data-i18n-alt="ownerInCar">
+          </picture>
+        </div>
+        <div class="story-content reveal-left">
+          <span class="story-number">02</span>
+          <span class="badge-luxury">Direct Sourcing</span>
+          <h2 class="story-heading">
+            <span class="white-text">Global Aesthetics </span><span class="red-text">Without Compromise</span>
+          </h2>
+          <p class="story-desc" data-i18n="about.p2">
+            Kaayyoon keenya uffata fi mi'a qulqullina addunyaa guutuu qabu, kan Dubaay fi Ameerikaa irraa kallattiin galan, lammiilee keenyaaf dhiheessuudha. Qulqullina laafaa hin qabnu; faashinni keenya of-danda'uu fi kabaja keessan kan mul'isudha.
+          </p>
+          <div class="story-badge-strip">
+            <span class="story-badge-item">Dubai Direct Imports</span>
+            <span class="story-badge-item">USA Streetwear</span>
+            <span class="story-badge-item">Original Jordan & Nike</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chapter 3: Industrial Expansion - Denim Manufacturing -->
+      <div class="story-row">
+        <div class="story-visual-wrap reveal-left">
+          <picture>
+            <source srcset="assets/images/webp/video-frame-hero.webp" type="image/webp">
+            <img src="assets/images/video-frame-hero.png" alt="Founder Inside Sherefu Fashion Boutique" data-i18n-alt="videoFrameHero">
+          </picture>
+        </div>
+        <div class="story-content reveal-right">
+          <span class="story-number">03</span>
+          <span class="badge-luxury">Next Generation</span>
+          <h2 class="story-heading">
+            <span class="white-text">From Retail Boutique </span><span class="red-text">to Jeans Manufacturing</span>
+          </h2>
+          <p class="story-desc" data-i18n="about.p3">
+            Dabalataanis, dhiheenyatti warshaa uffata jiinsii (Jeans Manufacturing) mataa keenyaa hundeeffachuun daldala jumlaa biyya keessaa babal'isaa jirra.
+          </p>
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="stores.html" class="btn-red-primary" data-i18n="hero.btnVisit">
+              Suuqii Keenya Daawwadhaa
+            </a>
+            <a href="wholesale.html" class="btn-white-secondary" data-i18n="nav.wholesale">
+              Daldala Jumlaa
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/251988097281" target="_blank" class="whatsapp-float-btn" title="Chat with Sherefu Fashion on WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41 1.56 1.56 2.41 3.63 2.41 5.83s-.85 4.27-2.41 5.83c-1.56 1.55-3.63 2.41-5.82 2.41-1.5 0-2.97-.39-4.27-1.14l-.3-.18-3.17.83.85-3.09-.2-.31a8.17 8.17 0 0 1-1.25-4.35c0-2.2.86-4.27 2.41-5.83 1.56-1.55 3.63-2.41 5.83-2.41zm-3.32 4.14c-.18 0-.4.07-.61.31-.21.24-.8 78-.8 1.91 0 1.13.82 2.22.94 2.37.11.16 1.62 2.47 3.92 3.46.55.24.97.38 1.31.49.55.17 1.05.15 1.45.09.44-.07 1.36-.56 1.55-1.1.19-.55.19-1.02.13-1.12-.06-.09-.21-.15-.45-.27-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.55-.42-.14-.01-.31-.01-.48-.01z"/>
+    </svg>
+  </a>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <img src="assets/images/logo-sherefu-fashion.png" alt="Sherefu Fashion" class="footer-logo">
+      <h4 style="font-family: var(--font-serif); font-size: 1.35rem; color: #fff; margin-bottom: 0.5rem;">SHEREFU <span style="color: var(--red-bright);">FASHION</span></h4>
+      <p style="color: var(--text-muted); font-size: 0.92rem;" data-i18n="footer.tagline">
+        Faashina qulqullina olaanaa Shashamanetti. Dubaay fi USA irraa.
+      </p>
+
+      <ul class="footer-nav">
+        <li><a href="index.html" data-i18n="nav.home">Mana</a></li>
+        <li><a href="about.html" class="active" data-i18n="nav.about">Waa'ee Keenya</a></li>
+        <li><a href="stores.html" data-i18n="nav.stores">Suuqii Sherefu</a></li>
+        <li><a href="wholesale.html" data-i18n="nav.wholesale">Jumlaa</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Nu Qunnamaa</a></li>
+        <li><a href="https://www.tiktok.com/@sherefu28" target="_blank" rel="noopener noreferrer">TikTok @sherefu28</a></li>
+      </ul>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Sherefu Fashion. <span data-i18n="footer.rights">Mirgi hundumtuu seeraan eeggamaadha.</span></p>
+        <p class="footer-notice" data-i18n="footer.ownerNote">
+          Hubachiisa: Afaan Oromoo fi Amaariffi banamuun dura dubbifamee mirkanaa'uu qaba.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/translations.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
