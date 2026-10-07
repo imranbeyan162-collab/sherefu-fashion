@@ -6,22 +6,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Noto+Sans+Ethiopic:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Deep Luxury Blacks */
-  --black: #080808;
-  --black-1: #0f0f10;
-  --black-2: #161618;
-  --black-card: #1c1c1f;
-  --black-glass: rgba(10, 10, 12, 0.92);
+  /* Soft Luxury Charcoal & Refined Slate (Minimized Pitch-Black) */
+  --black: #1a1b22;
+  --black-1: #23252f;
+  --black-2: #2b2e3b;
+  --black-card: #282b37;
+  --black-card-hover: #323544;
+  --black-glass: rgba(26, 27, 34, 0.92);
 
   /* Pure Luxury Whites & Silvers */
   --white: #ffffff;
-  --white-soft: #f4f4f6;
-  --white-muted: #d1d1d6;
-  --white-dim: #9898a0;
-  --white-border: rgba(255, 255, 255, 0.22);
-  --white-border-subtle: rgba(255, 255, 255, 0.1);
+  --white-soft: #f7f7fa;
+  --white-muted: #d8d8e0;
+  --white-dim: #acacb8;
+  --white-border: rgba(255, 255, 255, 0.28);
+  --white-border-subtle: rgba(255, 255, 255, 0.16);
   --white-glow: rgba(255, 255, 255, 0.25);
-  --white-gradient: linear-gradient(135deg, #ffffff 0%, #e2e2e8 50%, #b0b0b8 100%);
+  --white-gradient: linear-gradient(135deg, #ffffff 0%, #ececf2 50%, #c4c4ce 100%);
 
   /* Social */
   --tiktok-color: #ffffff;
@@ -52,7 +53,11 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background: var(--black);
+  background-color: var(--black);
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(255, 255, 255, 0.05) 0px, transparent 55%),
+    radial-gradient(at 85% 85%, rgba(255, 255, 255, 0.04) 0px, transparent 55%);
+  background-attachment: fixed;
   color: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
@@ -102,6 +107,16 @@ img { display: block; max-width: 100%; }
 
 .white-text { color: var(--white); }
 .two-tone { color: var(--white); }
+
+.phone-display-number {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 5.5vw, 3.4rem);
+  font-weight: 800;
+  white-space: nowrap;
+  display: inline-block;
+  max-width: 100%;
+  line-height: 1.2;
+}
 
 .badge-luxury {
   display: inline-flex;
@@ -337,7 +352,7 @@ img { display: block; max-width: 100%; }
   inset: -40px;
   background-size: cover;
   background-position: center;
-  filter: blur(30px) brightness(0.4);
+  filter: blur(24px) brightness(0.65);
   transform: scale(1.1);
 }
 
@@ -357,19 +372,19 @@ img { display: block; max-width: 100%; }
     width: auto;
     margin: 0 auto;
     object-fit: contain;
-    box-shadow: 0 0 100px rgba(0, 0, 0, 0.95);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.7);
   }
 }
 
-/* Subtle Monochrome Vignette */
+/* Softer Luminous Overlay (Minimizing harsh pitch-black) */
 .hero-scrim-overlay {
   position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
   background:
-    radial-gradient(circle at center, rgba(8, 8, 8, 0.4) 0%, rgba(8, 8, 8, 0.88) 85%),
-    linear-gradient(180deg, rgba(8,8,8,0.6) 0%, transparent 40%, rgba(8,8,8,0.95) 100%);
+    radial-gradient(circle at center, rgba(22, 23, 29, 0.25) 0%, rgba(22, 23, 29, 0.65) 85%),
+    linear-gradient(180deg, rgba(22, 23, 29, 0.45) 0%, transparent 40%, rgba(22, 23, 29, 0.8) 100%);
 }
 
 .hero-content { position: relative; z-index: 3; max-width: 920px; margin: 0 auto; padding: 0 1.25rem; }
@@ -480,7 +495,7 @@ img { display: block; max-width: 100%; }
 .section { padding: 6.5rem 0; position: relative; overflow: hidden; }
 
 .section-alt {
-  background: var(--black-1);
+  background: linear-gradient(180deg, var(--black-1) 0%, #242733 50%, var(--black-1) 100%);
   border-top: 1px solid var(--white-border-subtle);
   border-bottom: 1px solid var(--white-border-subtle);
 }
@@ -489,7 +504,7 @@ img { display: block; max-width: 100%; }
   position: relative;
   padding: 5.5rem 0 4.5rem;
   text-align: center;
-  background: linear-gradient(180deg, #141416 0%, var(--black) 100%);
+  background: linear-gradient(180deg, #252834 0%, var(--black) 100%);
   border-bottom: 1px solid var(--white-border-subtle);
 }
 .page-banner h1 { font-family: var(--font-serif); font-size: clamp(2.6rem, 5.5vw, 4.2rem); margin-bottom: 1rem; color: var(--white); }
@@ -523,16 +538,16 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
   transition: transform 0.4s var(--ease-out), box-shadow 0.4s, border-color 0.3s;
 }
 .curation-card:hover {
   transform: translateY(-8px);
   border-color: var(--white);
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 20px rgba(255, 255, 255, 0.12);
 }
 
-.curation-img-wrap { position: relative; aspect-ratio: 4/5; overflow: hidden; background: #000; }
+.curation-img-wrap { position: relative; aspect-ratio: 4/5; overflow: hidden; background: #1c1d25; }
 .curation-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease-out); }
 .curation-card:hover .curation-img { transform: scale(1.08); }
 
@@ -540,7 +555,7 @@ img { display: block; max-width: 100%; }
   position: absolute;
   top: 1rem; left: 1rem;
   z-index: 4;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(22, 23, 29, 0.85);
   backdrop-filter: blur(8px);
   border: 1px solid var(--white-border);
   color: #fff;
@@ -579,7 +594,7 @@ img { display: block; max-width: 100%; }
   border-radius: var(--radius-lg);
   background: var(--black-card);
   border: 1px solid var(--white-border-subtle);
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
 }
 .story-row.reversed > .story-visual-wrap { order: 2; }
 
@@ -588,8 +603,8 @@ img { display: block; max-width: 100%; }
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--white-border);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-  background: #000;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  background: #1c1d25;
   aspect-ratio: 4/5;
   max-height: 620px;
 }
@@ -602,14 +617,14 @@ img { display: block; max-width: 100%; }
   font-size: 3.8rem;
   font-weight: 900;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.18);
   margin-bottom: 0.4rem;
 }
 .story-heading { font-family: var(--font-serif); font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 1.1rem; line-height: 1.25; color: var(--white); }
 .story-desc { font-size: 1.05rem; color: var(--white-muted); line-height: 1.75; margin-bottom: 1.4rem; }
 .story-badge-strip { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
 .story-badge-item {
-  background: rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.08);
   border: 1px solid var(--white-border-subtle);
   padding: 0.4rem 0.95rem;
   border-radius: var(--radius-full);
@@ -626,11 +641,11 @@ img { display: block; max-width: 100%; }
   border: 1px solid var(--white-border-subtle);
   border-radius: var(--radius-lg);
   padding: 2.75rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
 .store-notice-bar {
-  background: #141418;
+  background: #252834;
   border-left: 4px solid var(--white);
   padding: 1.1rem 1.4rem;
   border-radius: var(--radius-sm);
@@ -649,7 +664,7 @@ img { display: block; max-width: 100%; }
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: #000;
+  background: #1c1d25;
   aspect-ratio: 3/4;
   border: 1px solid var(--white-border-subtle);
   transition: transform 0.4s var(--ease-out), border-color 0.3s;
@@ -666,11 +681,11 @@ img { display: block; max-width: 100%; }
   grid-template-columns: 1fr 1fr;
   background: var(--black-card);
   border: 1px solid var(--white-border-subtle);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
 }
 .map-placeholder {
   min-height: 300px;
-  background: #111114;
+  background: #1e2029;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -691,13 +706,13 @@ img { display: block; max-width: 100%; }
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   border: 1px solid var(--white-border-subtle);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 .contact-info-list { display: flex; flex-direction: column; gap: 1.6rem; margin-bottom: 2.2rem; }
 .contact-info-item { display: flex; gap: 1.1rem; align-items: flex-start; }
 .contact-icon-box {
   width: 48px; height: 48px;
-  background: #151518;
+  background: #252834;
   border: 1px solid var(--white-border-subtle);
   border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
@@ -711,7 +726,7 @@ img { display: block; max-width: 100%; }
 .form-label { display: block; font-size: 0.88rem; color: var(--white-muted); margin-bottom: 0.45rem; font-weight: 600; }
 .form-input, .form-textarea {
   width: 100%;
-  background: #111114;
+  background: #1b1d25;
   border: 1px solid var(--white-border-subtle);
   padding: 0.95rem 1.15rem;
   border-radius: var(--radius-sm);
@@ -743,7 +758,7 @@ img { display: block; max-width: 100%; }
    FOOTER (MONOCHROME LUXURY)
    ========================================================================== */
 .footer {
-  background: #050506;
+  background: #13141a;
   border-top: 1px solid var(--white-border-subtle);
   padding: 4.5rem 0 2.5rem;
   text-align: center;
@@ -775,12 +790,30 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 640px) {
   .section { padding: 4.5rem 0; }
+  .navbar { gap: 0.4rem; padding: 0.65rem 0; }
+  .brand-logo-wrap { gap: 0.45rem; flex-shrink: 0; min-width: 0; }
+  .brand-logo-img { height: 36px; }
+  .brand-name { font-size: 0.95rem; letter-spacing: 0.03em; white-space: nowrap; }
+  .brand-name span { display: inline; }
+  .header-actions { gap: 0.4rem; flex-shrink: 0; }
+  .header-actions .btn-tiktok-pill { padding: 0.45rem 0.65rem; }
+  .header-actions .btn-tiktok-pill span { display: none; }
+  .lang-switcher-wrap { max-width: 110px; }
+  .lang-select { padding: 0.4rem 0.6rem; font-size: 0.76rem; max-width: 110px; }
+  .mobile-menu-btn { padding: 0.45rem 0.55rem; }
   .store-gallery-masonry { grid-template-columns: 1fr; }
   .gallery-item.span-2 { grid-column: span 1; aspect-ratio: 3/4; }
-  .header-actions .btn-tiktok-pill span { display: none; }
-  .brand-name { font-size: 1.1rem; }
   .store-showcase-box { padding: 1.35rem; }
   .whatsapp-float-btn { bottom: 1.25rem; right: 1.25rem; width: 52px; height: 52px; }
   .reveal-left  { transform: translateX(-40px); }
   .reveal-right { transform: translateX(40px); }
+  .phone-display-number { font-size: clamp(1.2rem, 5.2vw, 2.2rem) !important; }
+}
+
+@media (max-width: 380px) {
+  .brand-name { font-size: 0.85rem; }
+  .brand-logo-img { height: 30px; }
+  .lang-switcher-wrap { max-width: 90px; }
+  .lang-select { padding: 0.35rem 0.45rem; font-size: 0.7rem; max-width: 90px; }
+  .phone-display-number { font-size: clamp(1.1rem, 5vw, 1.8rem) !important; }
 }
