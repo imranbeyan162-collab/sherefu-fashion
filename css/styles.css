@@ -49,6 +49,10 @@ html {
   scroll-behavior: smooth;
   background: var(--black);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden !important;
+  overflow-x: clip !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 body {
@@ -60,7 +64,11 @@ body {
   background-attachment: fixed;
   color: var(--white);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  overflow-x: clip !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  position: relative;
   min-height: 100vh;
 }
 
@@ -211,6 +219,9 @@ img { display: block; max-width: 100%; }
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--white-border-subtle);
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .navbar {
@@ -219,6 +230,9 @@ img { display: block; max-width: 100%; }
   justify-content: space-between;
   padding: 0.9rem 0;
   gap: 1rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .brand-logo-wrap { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }
@@ -298,16 +312,22 @@ img { display: block; max-width: 100%; }
 .mobile-drawer {
   position: fixed;
   inset: 0;
-  background: rgba(10, 10, 12, 0.98);
+  background: rgba(22, 23, 30, 0.98);
   backdrop-filter: blur(24px);
   z-index: 200;
   display: flex;
   flex-direction: column;
   padding: 2.5rem;
   transform: translateX(100%);
-  transition: transform 0.45s var(--ease-out);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.45s var(--ease-out), visibility 0.45s;
 }
-.mobile-drawer.open { transform: translateX(0); }
+.mobile-drawer.open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+}
 .mobile-drawer-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem; }
 .mobile-drawer-close { background: var(--white); border: none; color: var(--black); width: 44px; height: 44px; border-radius: 50%; font-size: 1.8rem; cursor: pointer; }
 .mobile-nav-list { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; font-family: var(--font-serif); font-size: 1.4rem; }
@@ -387,26 +407,40 @@ img { display: block; max-width: 100%; }
     linear-gradient(180deg, rgba(22, 23, 29, 0.45) 0%, transparent 40%, rgba(22, 23, 29, 0.8) 100%);
 }
 
-.hero-content { position: relative; z-index: 3; max-width: 920px; margin: 0 auto; padding: 0 1.25rem; }
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 920px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.8rem, 7.5vw, 5.4rem);
+  font-size: clamp(2.4rem, 7.5vw, 5.4rem);
   font-weight: 900;
   letter-spacing: 0.05em;
   line-height: 1.05;
   margin-bottom: 1.2rem;
   color: var(--white);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  font-size: clamp(0.95rem, 2.2vw, 1.3rem);
   max-width: 720px;
+  width: 100%;
+  box-sizing: border-box;
   margin: 0 auto 2.4rem;
   color: var(--white-muted);
   font-weight: 400;
   line-height: 1.7;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
 }
 
@@ -789,31 +823,66 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 640px) {
-  .section { padding: 4.5rem 0; }
-  .navbar { gap: 0.4rem; padding: 0.65rem 0; }
-  .brand-logo-wrap { gap: 0.45rem; flex-shrink: 0; min-width: 0; }
-  .brand-logo-img { height: 36px; }
-  .brand-name { font-size: 0.95rem; letter-spacing: 0.03em; white-space: nowrap; }
-  .brand-name span { display: inline; }
-  .header-actions { gap: 0.4rem; flex-shrink: 0; }
-  .header-actions .btn-tiktok-pill { padding: 0.45rem 0.65rem; }
+  .section { padding: 4.5rem 0; overflow: hidden; }
+  .container { padding: 0 0.85rem; max-width: 100%; box-sizing: border-box; overflow: hidden; }
+  .navbar { gap: 0.35rem; padding: 0.55rem 0; width: 100%; box-sizing: border-box; }
+  .brand-logo-wrap { gap: 0.4rem; flex-shrink: 1; min-width: 0; }
+  .brand-logo-img { height: 32px; width: auto; flex-shrink: 0; }
+  .brand-name { font-size: 0.92rem; letter-spacing: 0.02em; white-space: nowrap; }
+  .brand-name span { display: none; }
+  .header-actions { gap: 0.35rem; flex-shrink: 0; }
+  .header-actions .btn-tiktok-pill {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
   .header-actions .btn-tiktok-pill span { display: none; }
-  .lang-switcher-wrap { max-width: 110px; }
-  .lang-select { padding: 0.4rem 0.6rem; font-size: 0.76rem; max-width: 110px; }
-  .mobile-menu-btn { padding: 0.45rem 0.55rem; }
+  .lang-switcher-wrap { max-width: 92px; overflow: hidden; }
+  .lang-select { padding: 0.35rem 0.5rem; font-size: 0.72rem; max-width: 92px; height: 34px; }
+  .mobile-menu-btn { width: 34px; height: 34px; padding: 0.35rem; display: inline-flex; align-items: center; justify-content: center; }
+  
+  .hero-content { padding: 0 0.65rem; max-width: 100%; box-sizing: border-box; }
+  .hero-title { font-size: clamp(1.85rem, 8vw, 3rem); word-break: break-word; }
+  .hero-subtitle { font-size: clamp(0.85rem, 3.5vw, 1.05rem); word-break: break-word; overflow-wrap: break-word; }
+  .hero-actions {
+    gap: 0.6rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .hero-actions .btn-red-primary,
+  .hero-actions .btn-white-secondary {
+    padding: 0.75rem 1.15rem;
+    font-size: 0.88rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
   .store-gallery-masonry { grid-template-columns: 1fr; }
   .gallery-item.span-2 { grid-column: span 1; aspect-ratio: 3/4; }
   .store-showcase-box { padding: 1.35rem; }
-  .whatsapp-float-btn { bottom: 1.25rem; right: 1.25rem; width: 52px; height: 52px; }
-  .reveal-left  { transform: translateX(-40px); }
-  .reveal-right { transform: translateX(40px); }
-  .phone-display-number { font-size: clamp(1.2rem, 5.2vw, 2.2rem) !important; }
+  .whatsapp-float-btn { bottom: 1.25rem; right: 1.25rem; width: 50px; height: 50px; }
+  
+  /* On mobile: vertically animate on scroll so elements never stick out horizontally */
+  .reveal-left, .reveal-right { transform: translateY(24px) !important; }
+  .phone-display-number { font-size: clamp(1.15rem, 5vw, 2rem) !important; }
 }
 
 @media (max-width: 380px) {
-  .brand-name { font-size: 0.85rem; }
-  .brand-logo-img { height: 30px; }
-  .lang-switcher-wrap { max-width: 90px; }
-  .lang-select { padding: 0.35rem 0.45rem; font-size: 0.7rem; max-width: 90px; }
-  .phone-display-number { font-size: clamp(1.1rem, 5vw, 1.8rem) !important; }
+  .brand-name { font-size: 0.82rem; }
+  .brand-logo-img { height: 28px; }
+  .lang-switcher-wrap { max-width: 82px; }
+  .lang-select { padding: 0.3rem 0.4rem; font-size: 0.68rem; max-width: 82px; }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 260px;
+    margin: 0 auto 1.8rem;
+  }
+  .hero-actions a { width: 100%; text-align: center; }
+  .phone-display-number { font-size: clamp(1rem, 4.8vw, 1.6rem) !important; }
 }
